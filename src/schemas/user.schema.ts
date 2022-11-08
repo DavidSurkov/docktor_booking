@@ -3,7 +3,7 @@ import { HydratedDocument, ObjectId } from 'mongoose';
 import * as mongoose from 'mongoose';
 import { Transform } from 'class-transformer';
 import { RoleEnum } from 'src/utils/enums';
-import { Appointment } from './appointment.schema';
+import { Appointment } from 'src/schemas/appointment.schema';
 
 export type UserDocument = HydratedDocument<User>;
 

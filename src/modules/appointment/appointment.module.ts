@@ -1,14 +1,11 @@
 import { Module } from '@nestjs/common';
-import { AppointmentController } from './appointment.controller';
-import { AppointmentService } from './appointment.service';
+import { AppointmentController } from 'src/modules/appointment/appointment.controller';
+import { AppointmentService } from 'src/modules/appointment/appointment.service';
 import { MongooseModule } from '@nestjs/mongoose';
-import { User, UserSchema } from '../../schemas/user.schema';
-import { Doctor, DoctorSchema } from '../../schemas/doctor.schema';
-import {
-  Appointment,
-  AppointmentSchema,
-} from '../../schemas/appointment.schema';
-import { NotificationModule } from '../notification/notification.module';
+import { User, UserSchema } from 'src/schemas/user.schema';
+import { Doctor, DoctorSchema } from 'src/schemas/doctor.schema';
+import { Appointment, AppointmentSchema } from 'src/schemas/appointment.schema';
+import { NotificationModule } from 'src/modules/notification/notification.module';
 
 @Module({
   imports: [

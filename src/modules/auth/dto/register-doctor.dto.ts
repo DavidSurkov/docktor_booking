@@ -1,4 +1,4 @@
-import { RegisterUserDto } from './register-user.dto';
+import { RegisterUserDto } from 'src/modules/auth/dto/register-user.dto';
 import { IsString } from 'class-validator';
 
 export class RegisterDoctorDto extends RegisterUserDto {

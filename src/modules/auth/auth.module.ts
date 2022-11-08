@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { AuthController } from './auth.controller';
-import { AuthService } from './auth.service';
+import { AuthController } from 'src/modules/auth/auth.controller';
+import { AuthService } from 'src/modules/auth/auth.service';
 import { MongooseModule } from '@nestjs/mongoose';
-import { User, UserSchema } from '../../schemas/user.schema';
-import { Doctor, DoctorSchema } from '../../schemas/doctor.schema';
+import { User, UserSchema } from 'src/schemas/user.schema';
+import { Doctor, DoctorSchema } from 'src/schemas/doctor.schema';
 
 @Module({
   imports: [

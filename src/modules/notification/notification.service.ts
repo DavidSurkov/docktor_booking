@@ -2,11 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { SchedulerRegistry } from '@nestjs/schedule';
 import { CronJob } from 'cron';
 import * as fs from 'fs';
-
-enum TimeEnum {
-  TWO_HOURS = '2h',
-  TWENTY_FOUR_HOURS = '24h',
-}
+import { TimeEnum } from 'src/utils/enums';
 
 @Injectable()
 export class NotificationService {
@@ -18,7 +14,6 @@ export class NotificationService {
     doctorSpec: string,
     appointmentDate: Date,
   ) {
-    debugger;
     const date24h = new Date(appointmentDate);
     date24h.setDate(date24h.getDate() - 1);
     const date2h = new Date(appointmentDate);
@@ -41,18 +36,16 @@ export class NotificationService {
       );
     });
 
-    await this.schedulerRegistry.addCronJob(
+    this.schedulerRegistry.addCronJob(
       `${Date.now()}-2h-${userName}-${appointment_id}`,
       job2h,
     );
     job2h.start();
-    console.log('Job will be done at ' + date2h);
-    await this.schedulerRegistry.addCronJob(
+    this.schedulerRegistry.addCronJob(
       `${Date.now()}-24h-${userName}-${appointment_id}`,
       job24h,
     );
     job24h.start();
-    console.log('Job will be done at ' + date24h);
 
     return 'Notification was added';
   }
@@ -63,7 +56,6 @@ export class NotificationService {
     appointmentDate: Date,
     type: TimeEnum,
   ) {
-    debugger;
     const message2h = `${Date.now()} Hi ${userName}!, You have 2 hours to go to ${doctorSpec} on ${appointmentDate}`;
     const message24h = `${Date.now()} Hi ${userName}!, We remind you that you are scheduled for ${doctorSpec} tomorrow at ${appointmentDate}`;
 
@@ -78,9 +70,6 @@ export class NotificationService {
   private writeToLogFile(message: string) {
     const writeStream = fs.createWriteStream('notifications.log');
     writeStream.write(message, 'utf-8');
-    writeStream.on('finish', () => {
-      console.log('Wrote all data to file notifications.log');
-    });
     writeStream.end();
   }
 }

@@ -3,7 +3,7 @@ import { ObjectId, HydratedDocument } from 'mongoose';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { RoleEnum } from 'src/utils/enums';
 import * as mongoose from 'mongoose';
-import { Appointment } from './appointment.schema';
+import { Appointment } from 'src/schemas/appointment.schema';
 
 export type DoctorDocument = HydratedDocument<Doctor>;
 

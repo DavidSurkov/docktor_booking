@@ -2,8 +2,8 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Transform } from 'class-transformer';
 import { HydratedDocument, ObjectId } from 'mongoose';
 import * as mongoose from 'mongoose';
-import { Doctor } from './doctor.schema';
-import { User } from './user.schema';
+import { Doctor } from 'src/schemas/doctor.schema';
+import { User } from 'src/schemas/user.schema';
 
 export type AppointmentDocument = HydratedDocument<Appointment>;
 

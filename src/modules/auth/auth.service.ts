@@ -5,12 +5,12 @@ import {
   Logger,
 } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { User, UserDocument } from '../../schemas/user.schema';
+import { User, UserDocument } from 'src/schemas/user.schema';
 import { Model } from 'mongoose';
-import { Doctor, DoctorDocument } from '../../schemas/doctor.schema';
-import { RegisterUserDto } from './dto/register-user.dto';
-import { RegisterDoctorDto } from './dto/register-doctor.dto';
-import { RoleEnum } from '../../utils/enums';
+import { Doctor, DoctorDocument } from 'src/schemas/doctor.schema';
+import { RegisterUserDto } from 'src/modules/auth/dto/register-user.dto';
+import { RegisterDoctorDto } from 'src/modules/auth/dto/register-doctor.dto';
+import { RoleEnum } from 'src/utils/enums';
 
 @Injectable()
 export class AuthService {

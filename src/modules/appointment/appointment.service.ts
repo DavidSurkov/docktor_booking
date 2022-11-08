@@ -4,16 +4,16 @@ import {
   InternalServerErrorException,
 } from '@nestjs/common';
 import { InjectConnection, InjectModel } from '@nestjs/mongoose';
-import { User, UserDocument } from '../../schemas/user.schema';
+import { User, UserDocument } from 'src/schemas/user.schema';
 import * as mongoose from 'mongoose';
 import { Model } from 'mongoose';
-import { Doctor, DoctorDocument } from '../../schemas/doctor.schema';
+import { Doctor, DoctorDocument } from 'src/schemas/doctor.schema';
 import {
   Appointment,
   AppointmentDocument,
-} from '../../schemas/appointment.schema';
-import { CreateAppointmentDto } from './dto/create-appointment.dto';
-import { NotificationService } from '../notification/notification.service';
+} from 'src/schemas/appointment.schema';
+import { CreateAppointmentDto } from 'src/modules/appointment/dto/create-appointment.dto';
+import { NotificationService } from 'src/modules/notification/notification.service';
 
 @Injectable()
 export class AppointmentService {

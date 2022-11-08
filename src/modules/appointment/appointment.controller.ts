@@ -7,8 +7,8 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
-import { AppointmentService } from './appointment.service';
-import { CreateAppointmentDto } from './dto/create-appointment.dto';
+import { AppointmentService } from 'src/modules/appointment/appointment.service';
+import { CreateAppointmentDto } from 'src/modules/appointment/dto/create-appointment.dto';
 
 @Controller('appointment')
 export class AppointmentController {
